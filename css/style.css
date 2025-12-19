@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+  text-align: center;
+}
+
+header {
+  padding: 30px;
+  background: #1e1e1e;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+.section {
+  padding: 90px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2.2em;
+  margin-bottom: 25px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Projets */
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.project {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #333;
+}
+
+.project.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* GIF uniformes */
+.project-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* même ratio pour tous les GIF */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  object-fit: cover; /* recadrage automatique pour remplir la carte */
+}
+
+.project-text {
+  width: 50%;
+  text-align: left;
+}
+
+.project h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Formulaire */
+form {
+  margin-top: 30px;
+  background: #1e1e1e;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #333;
+  border: 1px solid #555;
+  color: white;
+}
+
+button {
+  background: #4CAF50;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3b8d40;
+}
+
+/* Navigation HUD */
+.bottom-nav {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  background: rgba(30,30,30,0.85);
+  padding: 12px 18px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-btn {
+  padding: 10px 16px;
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+  color: white;
+}
+
+.nav-btn:hover {
+  background: #4CAF50;
+  color: #121212;
+}
+
+/* Espace bas */
+.bottom-nav-spacer {
+  height: 120px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+  }
+  .project.reverse {
+    flex-direction: column;
+  }
+  .project-card img,
+  .project-text {
+    width: 100%;
+  }
+}
+
+/* ===== FILTRES ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: transparent;
+  border: 2px solid #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #4CAF50;
+  color: #121212;
+}
+
+/* ===== GRILLE ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  grid-auto-flow: dense;
+  transition: all 0.35s ease;
+}
+
+/* ===== CARTES ===== */
+.project-card {
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #333;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.project-card.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.project-card.removed {
+  visibility: hidden;
+  position: absolute;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.project-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+.project-card p {
+  font-size: 0.95em;
+  margin-bottom: 10px;
+}
+
+/* ===== TAGS ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tags span {
+  background: #333;
+  border: 1px solid #4CAF50;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75em;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== ANIMATIONS FILTRE ===== */
+.project-card {
+  opacity: 1;
+  transform: scale(1);
+  transition: 
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.project-card.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}

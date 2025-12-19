@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Développeur Jeux Vidéo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Ambre Hardy Portfolio</h1>
+</header>
+
+<main>
+
+    <section id="about" class="section">
+        <h2>À Propos</h2>
+        <p>
+            Je suis développeuse de jeux vidéo passionnée par la création
+            d’expériences interactives, le gameplay et le game design.
+        </p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Compétences</h2>
+        <ul>
+            <li>Unity, Unreal Engine</li>
+            <li>C#, Python</li>
+            <li>Game Design & Level Design</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Mes Projets</h2>
+
+        <!-- Filtres -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="unity">Unity</button>
+            <button class="filter-btn" data-filter="unreal">Unreal</button>
+            <button class="filter-btn" data-filter="vr">VR</button>
+            <button class="filter-btn" data-filter="jam">Game Jam</button>
+            <button class="filter-btn" data-filter="multiplayer">Multijoueur</button>
+        </div>
+
+        <!-- Grille -->
+        <div class="project-grid">
+
+            <div class="project-card"
+                data-tags="unity multiplayer"
+                onclick="window.location.href='projects/banquise-battle.html'">
+
+                <img src="gif/Gif0.gif" alt="Banquise Battle GIF">
+                <h3>Banquise Battle</h3>
+                <p>Jeu de combat multijoueur.</p>
+                <div class="tags">
+                    <span>Unity</span>
+                    <span>Multiplayer</span>
+                </div>
+                <a href="https://megumin-firefox.itch.io/banquise-battle"
+                   target="_blank"
+                   onclick="event.stopPropagation()">
+                   Itch.io
+                </a>
+            </div>
+
+            <div class="project-card" data-tags="unity jam">
+                <img src="gif/Gif2.gif" alt="Songe GIF">
+                <h3>Songe</h3>
+                <p>Puzzle-platformer isométrique.</p>
+                <div class="tags">
+                    <span>Unity</span>
+                    <span>Game Jam</span>
+                </div>
+                <a href="https://soonyangel.itch.io/songe">Itch.io</a>
+            </div>
+
+            <div class="project-card" 
+                data-tags="unreal vr"
+                onclick="window.location.href='projects/arnac-la-poste.html'">
+                <img src="gif/Gif1.gif" alt="Arnac la Poste GIF">
+                <h3>Arnac la Poste</h3>
+                <p>Rail-shooter VR.</p>
+                <div class="tags">
+                    <span>Unreal</span>
+                    <span>VR</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-tags="unity jam multiplayer">
+                <img src="gif/Gif3.gif" alt="Pick Link GIF">
+                <h3>Pick Link</h3>
+                <p>Coopétition multijoueur.</p>
+                <div class="tags">
+                    <span>Unity</span>
+                    <span>Game Jam</span>
+                    <span>Multiplayer</span>
+                </div>
+                <a href="https://megumin-firefox.itch.io/pick-link">Itch.io</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>
+            Retrouvez-moi sur
+            <a href="https://bsky.app/profile/megumin-frozenfox.bsky.social">Bluesky</a>
+            ou
+            <a href="https://www.linkedin.com/in/ambre-hardy-1427a235a/">LinkedIn</a>
+        </p>
+
+        <form id="contactForm" action="https://formspree.io/f/xkgjjlky" method="POST">
+            <label>Nom</label>
+            <input type="text" name="name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Sujet</label>
+            <input type="text" name="subject" required>
+
+            <label>Message</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <p id="formMessage"></p>
+    </section>
+
+</main>
+
+<!-- Navigation flottante -->
+<nav class="bottom-nav">
+    <a href="#about" class="nav-btn">Accueil</a>
+    <a href="#skills" class="nav-btn">Compétences</a>
+    <a href="#projects" class="nav-btn">Projets</a>
+    <a href="#contact" class="nav-btn">Contact</a>
+</nav>
+
+<div class="bottom-nav-spacer"></div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

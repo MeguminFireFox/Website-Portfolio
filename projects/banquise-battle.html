@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Banquise Battle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- CSS page projet -->
+  <link rel="stylesheet" href="../css/project.css">
+  <script src="../js/project.js" defer></script>
+</head>
+
+<body>
+
+<!-- Bouton retour -->
+<a href="../index.html" class="back-btn">← Retour</a>
+
+<!-- ===== HERO ===== -->
+<section class="project-hero-layout">
+
+  <div class="project-hero-media">
+
+  <!-- Média principal -->
+  <div class="media-main" id="mediaMain">
+
+    <!-- Vidéo YouTube par défaut -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/0Bs6F_qKp90?si=Du7apBgG8L2bPV3I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+
+        <!-- Miniatures -->
+        <div class="media-thumbnails">
+
+            <!-- Miniature vidéo -->
+            <img
+            src="../img/Img0-0.png"
+            data-type="youtube"
+            data-src="https://www.youtube.com/embed/0Bs6F_qKp90"
+            alt="Vidéo gameplay">
+
+            <!-- Images -->
+            <!--<img src="../img/Img0-0.png" data-type="image" data-src="../img/Img0-0.png" alt="Screenshot">-->
+            <img src="../img/Img0-1.png" data-type="image" data-src="../img/Img0-1.png" alt="Screenshot">
+            <img src="../img/Img0-2.png" data-type="image" data-src="../img/Img0-2.png" alt="Screenshot">
+
+        </div>
+
+    </div>
+
+
+  <aside class="project-hero-info">
+    <h2>Informations sur le projet</h2>
+
+    <ul>
+      <li><strong>Catégorie :</strong> 3D, Jeu de combat, Multijoueur</li>
+      <li><strong>Durée :</strong> 1 semaine</li>
+      <li><strong>Moteur :</strong> Unity</li>
+      <li><strong>Langage :</strong> C#</li>
+      <li><strong>Équipe :</strong> 5 personnes</li>
+      <li><strong>Date :</strong> Décembre 2024</li>
+    </ul>
+
+    <strong>Itchio : </strong>
+    <a
+      href="https://megumin-firefox.itch.io/banquise-battle"
+      target="_blank"
+      class="itch-link"
+    >
+      Lien de la page
+    </a>
+  </aside>
+
+</section>
+
+<!-- ===== CONTENU ===== -->
+
+<section class="project-section-grid">
+  <div class="left-sections">
+    <div class="project-section">
+      <h2>Résumé du projet</h2>
+      <p>
+        Banquise Battle est un jeu de combat multijoueur local développé sous Unity.
+        L'objectif était de créer un jeu fun et de tester les fonctionalité multijoueur de Unity.
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>Mon rôle</h2>
+      <p>
+        J’ai travaillé principalement sur la programmation  du gameplay (mouvement, actions et animation du joueurs),
+        l’implémentation du multijoueur et integartio n des assests dans le projets.
+        J'ai aussi fait pas mal de juice et de correction de bug.
+      </p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="project-section project-tools">
+      <h2>Technologie testé</h2>
+      <ul>
+        <li>Multijoueur local</li>
+        <li>Animation 3D</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="project-features">
+
+  <h2>Fonctionnalités clés</h2>
+
+  <!-- Sélecteur -->
+  <div class="feature-tabs">
+    <button class="active" data-feature="feature1">Gameplay dynamique</button>
+    <button data-feature="feature2">Multijoueur local</button>
+    <button data-feature="feature3">Lisibilité & fun</button>
+  </div>
+
+  <!-- Contenu -->
+  <div class="feature-content">
+
+    <div class="feature-panel active" id="feature1">
+      <img src="../img/feature-gameplay.png" alt="">
+      <p>
+        Des mécaniques simples mais nerveuses, pensées pour des parties rapides
+        et fun entre amis.
+      </p>
+    </div>
+
+    <div class="feature-panel" id="feature2">
+      <img src="../img/feature-multi.png" alt="">
+      <p>
+        Jouable jusqu’à 4 joueurs en local, avec une gestion claire des inputs
+        et des interactions.
+      </p>
+    </div>
+
+    <div class="feature-panel" id="feature3">
+      <img src="../img/feature-clarity.png" alt="">
+      <p>
+        Une direction artistique lisible et colorée, facilitant la compréhension
+        immédiate de l’action.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+</body>
+</html>

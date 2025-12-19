@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Banquise Battle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- CSS page projet -->
+  <link rel="stylesheet" href="../css/project.css">
+  <script src="../js/project.js" defer></script>
+</head>
+
+<body>
+
+<!-- Bouton retour -->
+<a href="../index.html" class="back-btn">← Retour</a>
+
+<!-- ===== HERO ===== -->
+<section class="project-hero-layout">
+
+  <div class="project-hero-media">
+
+  <!-- Média principal -->
+  <div class="media-main" id="mediaMain">
+
+    <!-- Vidéo YouTube par défaut -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ridg2WYB-QI?si=moa9y22cToMLu9gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    </div>
+
+        <!-- Miniatures -->
+        <div class="media-thumbnails">
+
+            <!-- Miniature vidéo -->
+            <img
+            src="../img/Img1-0.png"
+            data-type="youtube"
+            data-src="https://www.youtube.com/embed/ridg2WYB-QI"
+            alt="Vidéo gameplay">
+
+            <!-- Images -->
+            <!--<img src="../img/Img0-0.png" data-type="image" data-src="../img/Img0-0.png" alt="Screenshot">-->
+            <img src="../img/Img1-1.png" data-type="image" data-src="../img/Img1-1.png" alt="Screenshot">
+
+        </div>
+
+    </div>
+
+
+  <aside class="project-hero-info">
+    <h2>Informations sur le projet</h2>
+
+    <ul>
+      <li><strong>Catégorie :</strong> 3D, VR, Rail-Shooter</li>
+      <li><strong>Durée :</strong> 4 semaine</li>
+      <li><strong>Moteur :</strong> Unreal</li>
+      <li><strong>Langage :</strong> Blueprint</li>
+      <li><strong>Équipe :</strong> 8 personnes</li>
+      <li><strong>Date :</strong> Mars 2025</li>
+    </ul>
+
+    <!--<strong>Itchio : </strong>
+    <a
+      href="https://megumin-firefox.itch.io/banquise-battle"
+      target="_blank"
+      class="itch-link"
+    >
+      Lien de la page
+    </a>-->
+  </aside>
+
+</section>
+
+<!-- ===== CONTENU ===== -->
+
+<section class="project-section-grid">
+  <div class="left-sections">
+    <div class="project-section">
+      <h2>Résumé du projet</h2>
+      <p>
+        Arnac la Poste est un Rail-Shooter VR développé sous Unreal Engine.
+        L'objectif était de créer un jeu VR avec Unreal.
+        C'est d'ailleurs aussi le premier vrai projet sur ce moteur qu'on a fait,
+        donc en plus de découvrir la VR on devait aussi apprendre sur le tas Unreal
+      </p>
+    </div>
+
+    <div class="project-section">
+      <h2>Mon rôle</h2>
+      <p>
+        J’ai travaillé principalement sur la programmation  des enemis/obstacles et globalemnt tout ce qui y touchait,
+        leur comportement, l'integartion de leurs animations, le juice et la klaxon.
+        J’ai également fait une partie de l'UI du jeu.
+      </p>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="project-section project-tools">
+      <h2>Technologie testé</h2>
+      <ul>
+        <li>VR</li>
+        <li>Unreal</li>
+        <li>Blueprint</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="project-features">
+
+  <h2>Fonctionnalités clés</h2>
+
+  <!-- Sélecteur -->
+  <div class="feature-tabs">
+    <button class="active" data-feature="feature1">Gameplay dynamique</button>
+    <button data-feature="feature2">Multijoueur local</button>
+    <button data-feature="feature3">Lisibilité & fun</button>
+  </div>
+
+  <!-- Contenu -->
+  <div class="feature-content">
+
+    <div class="feature-panel active" id="feature1">
+      <img src="../img/feature-gameplay.png" alt="">
+      <p>
+        Des mécaniques simples mais nerveuses, pensées pour des parties rapides
+        et fun entre amis.
+      </p>
+    </div>
+
+    <div class="feature-panel" id="feature2">
+      <img src="../img/feature-multi.png" alt="">
+      <p>
+        Jouable jusqu’à 4 joueurs en local, avec une gestion claire des inputs
+        et des interactions.
+      </p>
+    </div>
+
+    <div class="feature-panel" id="feature3">
+      <img src="../img/feature-clarity.png" alt="">
+      <p>
+        Une direction artistique lisible et colorée, facilitant la compréhension
+        immédiate de l’action.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+</body>
+</html>

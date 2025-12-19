@@ -1,0 +1,340 @@
+/* =========================
+   BOUTON RETOUR
+========================= */
+
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+
+  padding: 10px 16px;
+  border-radius: 14px;
+
+  border: 2px solid #4CAF50;
+  background: rgba(18, 18, 18, 0.85);
+  color: white;
+  text-decoration: none;
+
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #4CAF50;
+  color: #121212;
+}
+
+/* =========================
+   HERO LAYOUT
+========================= */
+
+.project-hero-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+
+  max-width: 1200px;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+}
+
+/* Vidéo principale */
+.project-hero-media video {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+/* Bloc infos */
+.project-hero-info {
+  background: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 18px;
+  padding: 25px;
+
+  text-align: left;
+}
+
+.project-hero-info h2 {
+  margin-bottom: 15px;
+  font-size: 1.4em;
+}
+
+.project-hero-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-hero-info li {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+
+/* Lien Itch */
+.itch-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* =========================
+   SECTIONS CONTENU
+========================= */
+
+.project-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+
+  background: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 18px;
+
+  text-align: left;
+}
+
+.project-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.6em;
+}
+
+.project-section p,
+.project-section li {
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .project-hero-layout {
+    grid-template-columns: 1fr;
+    margin-top: 100px;
+  }
+
+  .back-btn {
+    top: 15px;
+    left: 15px;
+  }
+}
+
+/* =========================
+   MEDIA STEAM-LIKE
+========================= */
+
+.media-main {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+  transition: opacity 0.25;
+}
+
+.media-main iframe,
+.media-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+/* Miniatures */
+.media-thumbnails {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.media-thumbnails img {
+  width: 140px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+
+  opacity: 0.7;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.media-thumbnails img:hover {
+  opacity: 1;
+}
+
+.media-thumbnails img.active {
+  opacity: 1;
+  border-color: #4CAF50;
+}
+
+.media-main {
+  position: relative;
+}
+
+.media-main iframe,
+.media-main img {
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.media-main.show iframe,
+.media-main.show img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================
+   FEATURES STEAM-LIKE
+========================= */
+
+.project-features {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 35px;
+
+  background: #1e1e1e;
+  border: 2px solid #333;
+  border-radius: 18px;
+}
+
+.project-features h2 {
+  margin-bottom: 20px;
+  font-size: 1.6em;
+}
+
+/* Tabs */
+.feature-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.feature-tabs button {
+  background: #121212;
+  color: #ccc;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.feature-tabs button:hover {
+  color: white;
+  border-color: #4CAF50;
+}
+
+.feature-tabs button.active {
+  background: #4CAF50;
+  color: #121212;
+  border-color: #4CAF50;
+}
+
+/* Content */
+.feature-content {
+  position: relative;
+  min-height: 280px;
+}
+
+/* Panels */
+.feature-panel {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
+  opacity: 0;
+  transform: scale(1.03);
+  pointer-events: none;
+
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.feature-panel.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Image */
+.feature-panel img {
+  width: 45%;
+  border-radius: 14px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+/* Texte */
+.feature-panel p {
+  width: 55%;
+  line-height: 1.6;
+  font-size: 1em;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .feature-panel {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-panel img,
+  .feature-panel p {
+    width: 100%;
+  }
+}
+
+/* =========================
+   GRID POUR SECTIONS
+========================= */
+.project-section-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* gauche plus large que droite */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.left-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Pour que la section outils soit de la même hauteur que la colonne gauche */
+.project-tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+/* Ajustement responsive */
+@media (max-width: 900px) {
+  .project-section-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .right-section {
+    order: -1; /* technologies au-dessus si mobile */
+  }
+}
+

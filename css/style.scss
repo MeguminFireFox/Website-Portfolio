@@ -1,0 +1,235 @@
+$blue : hsl(246, 80%, 60%);
+$redWord : hsl(15, 100%, 70%);
+$softblue : hsl(195, 74%, 62%);
+$redStudy : hsl(348, 100%, 68%);
+$limegreen : hsl(145, 58%, 55%);
+$violet : hsl(264, 64%, 52%);
+$softorange : hsl(43, 84%, 65%);
+
+$verydarkblue : hsl(226, 43%, 10%);
+$darkblue : hsl(235, 46%, 20%);
+$desaturatedBlue : hsl(235, 45%, 61%);
+$paleblue : hsl(236, 100%, 87%);
+
+
+:root {
+    font-size: clamp(12px, 0.75rem + (1vw - 7.68px) * 1.5625, 60px);
+  }
+  
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Rubik', sans-serif;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+
+    background-color: $verydarkblue;
+
+    .container-grid
+    {
+        width: 75%;
+        height: 75%;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(4, 2fr);
+        grid-template-rows: repeat(2, 2fr);
+        align-items: stretch;
+
+        #work
+        {
+            background-color: $redWord;
+        }
+
+        #play
+        {
+            background-color: $softblue;
+        }
+
+        #study
+        {
+            background-color: $redStudy;
+        }
+
+        #exercise
+        {
+            background-color: $limegreen;
+        }
+
+        #social
+        {
+            background-color: $violet;
+        }
+
+        #self-care
+        {
+            background-color: $softorange;
+        }
+
+        .container-item{
+            border-radius: .5rem;
+            overflow: hidden;
+
+            .up-part
+            {
+                position: relative;
+                height: 15%;
+                overflow: hidden;
+                svg{
+                    position: absolute;
+                    right: .6rem;
+                    top :-.6rem;
+                }    
+            }
+
+            .bottom-part{
+                background-color: $darkblue;
+                color: white;
+                height: 85%;
+                border-radius: .5rem .5rem 0 0;
+                transition: all .25s ease;
+
+                .bottom-item
+                {
+                    height: 80%;
+                    padding-top: 15%;
+                    margin-left: 10%;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: start;
+
+                    .container-title
+                    {
+                        width: 85%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .vertical-hamburger 
+                        {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            
+                            svg
+                            {
+                                fill :#BBC0FF;
+
+                                &:hover{
+                                    cursor: pointer;
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+
+                    .time
+                    {
+                        font-size: 2.5rem;
+                        font-weight: 300;
+                        transition: all .5s ease;
+                    }
+
+                    .recap
+                    {
+                        color: $paleblue;
+                        font-size: .8rem;
+                        transition: all 1s ease;
+                    }
+                }
+            }
+
+            &:not(.tall)
+            {
+                // .bottom-part:hover
+                // {
+                //     cursor: pointer;
+                //     background-color: hsl(236, 44%, 32%);
+                // }
+                .bottom-part 
+                {
+                    &:not(:has(.vertical-hamburger:hover)) {
+                      &:hover {
+                        cursor: pointer;
+                        background-color: hsl(236, 44%, 32%);
+                      }
+                    }
+                }
+            }
+        }
+
+        .tall {
+            grid-row: 2 span;
+            background-color: $darkblue;
+            .up-part
+            {
+                background-color: $blue;
+                height: 70%;
+
+                border-radius: .5rem;
+
+                .up-item
+                {
+                    padding-top: 15%;
+                    margin-left: 10%;
+                    height: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: start;
+                    color: white;
+
+                    img{
+                        height: 4rem;
+                        border-radius: 50%;
+                        border: white .2rem solid;
+                    }
+
+                    .who
+                    {
+                        .report
+                        {
+                            font-size: .7rem;
+                            color: $paleblue;
+                        }
+
+                        .jeremy{
+                            margin-top: .3rem;
+                            font-size: 2rem;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+
+            .bottom-part
+            {
+                background-color: $darkblue;
+                height: 30%;
+                color: $paleblue;
+
+                .timeset:hover
+                {
+                    color: white;
+                    cursor:pointer;
+                }
+
+                .active-timeset
+                {
+                    color:white;
+                    transition: transform 0.5s ease-in-out;
+                }
+            }
+        }
+    }
+}
