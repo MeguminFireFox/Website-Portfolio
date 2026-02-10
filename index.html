@@ -37,25 +37,33 @@
         <!-- Filtres -->
         <div class="filters">
             <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="game">Game</button>
+            <button class="filter-btn" data-filter="tool">Tool</button>
             <button class="filter-btn" data-filter="unity">Unity</button>
             <button class="filter-btn" data-filter="unreal">Unreal</button>
-            <button class="filter-btn" data-filter="vr">VR</button>
-            <button class="filter-btn" data-filter="jam">Game Jam</button>
+            <button class="filter-btn" data-filter="pc">PC</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="solo">Solo</button>
             <button class="filter-btn" data-filter="multiplayer">Multijoueur</button>
+            <button class="filter-btn" data-filter="vr">VR</button>
+            <button class="filter-btn" data-filter="projetpro">Projet Pro</button>
+            <button class="filter-btn" data-filter="jam">Game Jam</button>
         </div>
 
         <!-- Grille -->
         <div class="project-grid">
 
-            <div class="project-card"
-                data-tags="unity multiplayer"
+            <div class="project-card" data-tags="game unity pc multiplayer"
                 onclick="window.location.href='projects/banquise-battle.html'">
 
                 <img src="gif/Gif0.gif" alt="Banquise Battle GIF">
                 <h3>Banquise Battle</h3>
-                <p>Jeu de combat multijoueur.</p>
+                <p>Jeu de combat multijoueur</p>
                 <div class="tags">
+                    <span>Game</span>
                     <span>Unity</span>
+                    <span>PC</span>
                     <span>Multiplayer</span>
                 </div>
                 <a href="https://megumin-firefox.itch.io/banquise-battle"
@@ -65,39 +73,126 @@
                 </a>
             </div>
 
-            <div class="project-card" data-tags="unity jam">
+            <div class="project-card" data-tags="game unity pc solo jam"
+                onclick="window.location.href='projects/songe.html'">
                 <img src="gif/Gif2.gif" alt="Songe GIF">
                 <h3>Songe</h3>
-                <p>Puzzle-platformer isométrique.</p>
+                <p>Puzzle-platformer isométrique</p>
                 <div class="tags">
+                    <span>Game</span>
                     <span>Unity</span>
+                    <span>PC</span>
+                    <span>Solo</span>
                     <span>Game Jam</span>
                 </div>
                 <a href="https://soonyangel.itch.io/songe">Itch.io</a>
             </div>
 
-            <div class="project-card" 
-                data-tags="unreal vr"
+            <div class="project-card" data-tags="game unreal pc solo vr"
                 onclick="window.location.href='projects/arnac-la-poste.html'">
                 <img src="gif/Gif1.gif" alt="Arnac la Poste GIF">
                 <h3>Arnac la Poste</h3>
-                <p>Rail-shooter VR.</p>
+                <p>Rail-shooter VR</p>
                 <div class="tags">
+                    <span>Game</span>
                     <span>Unreal</span>
+                    <span>PC</span>
+                    <span>Solo</span>
                     <span>VR</span>
                 </div>
             </div>
 
-            <div class="project-card" data-tags="unity jam multiplayer">
+            <div class="project-card" data-tags="game unity pc multiplayer jam"
+                onclick="window.location.href='projects/pick-link.html'">
                 <img src="gif/Gif3.gif" alt="Pick Link GIF">
                 <h3>Pick Link</h3>
-                <p>Coopétition multijoueur.</p>
+                <p>Coopétition multijoueur</p>
                 <div class="tags">
+                    <span>Game</span>
                     <span>Unity</span>
-                    <span>Game Jam</span>
+                    <span>PC</span>
                     <span>Multiplayer</span>
+                    <span>Game Jam</span>
                 </div>
                 <a href="https://megumin-firefox.itch.io/pick-link">Itch.io</a>
+            </div>
+
+            <div class="project-card" data-tags="game unity pc solo jam"
+                onclick="window.location.href='projects/face-the-fear.html'">
+                <img src="gif/Gif4.gif" alt="Face The Fear GIF">
+                <h3>Face The Fear</h3>
+                <p>Jeu d'horreur</p>
+                <div class="tags">
+                    <span>Game</span>
+                    <span>Unity</span>
+                    <span>PC</span>
+                    <span>Solo</span>
+                    <span>Game Jam</span>
+                </div>
+                <a href="https://benjaminrenaudin.itch.io/facethefear">Itch.io</a>
+            </div>
+
+            <div class="project-card" data-tags="game unity mobile solo"
+                onclick="window.location.href='projects/tacticook.html'">
+                <img src="gif/Gif5.gif" alt="Tacticook GIF">
+                <h3>Tacticook</h3>
+                <p>Tactical-RPG</p>
+                <div class="tags">
+                    <span>Game</span>
+                    <span>Unity</span>
+                    <span>Mobile</span>
+                    <span>Solo</span>
+                </div>
+                <a href="https://nathan123456789.itch.io/tacticook">Itch.io</a>
+            </div>
+
+            <div class="project-card" data-tags="game unity mobile web solo projetpro"
+                onclick="window.location.href='projects/stereojump.html'">
+                <img src="gif/Gif6.gif" alt="StereoJump GIF">
+                <h3>StereoJump</h3>
+                <p>Platformer</p>
+                <div class="tags">
+                    <span>Game</span>
+                    <span>Unity</span>
+                    <span>Mobile</span>
+                    <span>Web</span>
+                    <span>Solo</span>
+                    <span>Projet Pro</span>
+                </div>
+                <a href="https://emryslg.itch.io/stereojump">Itch.io</a>
+            </div>
+
+            <div class="project-card" data-tags="tool unity">
+                <img src="gif/Gif3.gif" alt="Pick Link GIF">
+                <h3>DebugLogManager</h3>
+                <p>Outil d'édition de code</p>
+                <div class="tags">
+                    <span>Tool</span>
+                    <span>Unity</span>
+                </div>
+                <!--<a href="https://nathan123456789.itch.io/tacticook">GitHub</a>-->
+            </div>
+
+            <div class="project-card" data-tags="tool unity">
+                <img src="gif/Gif3.gif" alt="Pick Link GIF">
+                <h3>IgnoreFolder</h3>
+                <p>Outil de navigation</p>
+                <div class="tags">
+                    <span>Tool</span>
+                    <span>Unity</span>
+                </div>
+                <!--<a href="https://nathan123456789.itch.io/tacticook">GitHub</a>-->
+            </div>
+
+            <div class="project-card" data-tags="tool unity">
+                <img src="gif/Gif3.gif" alt="Pick Link GIF">
+                <h3>SaveFunction</h3>
+                <p>Outil de navigation</p>
+                <div class="tags">
+                    <span>Tool</span>
+                    <span>Unity</span>
+                </div>
+                <!--<a href="https://nathan123456789.itch.io/tacticook">GitHub</a>-->
             </div>
 
         </div>
