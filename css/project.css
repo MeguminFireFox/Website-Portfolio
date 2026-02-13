@@ -86,8 +86,8 @@
 
 .project-section {
   max-width: 900px;
-  margin: 40px auto;
-  padding: 25px;
+  margin: 10px auto;
+  padding: 18px 22px;
 
   background: #1e1e1e;
   border: 2px solid #333;
@@ -105,6 +105,18 @@
 .project-section li {
   line-height: 1.6;
   font-size: 0.95em;
+}
+
+.project-section-grid:has(.right-section) {
+  grid-template-columns: 2fr 1fr;
+}
+
+.project-section-grid:not(:has(.right-section)) {
+  grid-template-columns: 1fr;
+}
+
+.project-section p {
+  text-align: justify;
 }
 
 /* =========================
