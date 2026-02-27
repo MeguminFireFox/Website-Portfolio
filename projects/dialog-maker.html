@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Tacticooks</title>
+  <title>Dialog Maker</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS global -->
@@ -58,23 +58,22 @@
     <h2>Informations sur le projet</h2>
 
     <ul>
-      <li><strong>Catégorie :</strong> 3D, Roguelike, Tactical-RPG</li>
-      <li><strong>Support :</strong> Mobile</li>
-      <li><strong>Durée :</strong> 3 mois</li>
+      <li><strong>Catégorie :</strong> Convertisseur, Interpréteur</li>
+      <li><strong>Durée :</strong> 2 semaine</li>
       <li><strong>Moteur :</strong> Unity</li>
       <li><strong>Langage :</strong> C#</li>
-      <li><strong>Équipe :</strong> 8 personnes</li>
-      <li><strong>Date :</strong> Juin 2025</li>
+      <li><strong>Équipe :</strong> 1 personnes</li>
+      <li><strong>Date :</strong> ???</li>
     </ul>
 
-    <strong>Itchio : </strong>
+    <!--<strong>Itchio : </strong>
     <a
       href="https://nathan123456789.itch.io/tacticook"
       target="_blank"
       class="itch-link"
     >
       Lien de la page
-    </a>
+    </a>-->
   </aside>
 
 </section>
@@ -84,29 +83,30 @@
 <section class="project-section-grid">
   <div class="left-sections">
     <div class="project-section">
-      <h2>Résumé du projet</h2>
+      <h2>Problématique</h2>
       <p>
-        Tacticook est un Roguelike Tactical-RPG mobile développé sous Unity.
-        L'objectif était de créer un jeu fun et original sur mobile, dans le but de pouvoir
-         si l'on a l'envie par la suite de le présenté a un éditeur.
+        Pour faire des dialogue dans un jeu on le fait souvent d'abord en dehors du projet, 
+        cet outils permet de rapidement convertir un fichier excel en scriptable object directement intégrable dans le jeu.
       </p>
     </div>
 
     <div class="project-section">
-      <h2>Mon rôle</h2>
+      <h2>Fonctionnement</h2>
       <p>
-        J’ai surtout travaillé sur les programmes secondaire (système de sauvegarde, système de dialogue et différents outils de production),
-        et sur le playtest, la recherche de bug et leur correction.
+        L'outil a besoin d'un fichier excel enregistré en csv, 
+        une fois mis dans l'outil le fichier est scnner entièrement et 
+        interprète les différentes balise dans le excel pour faire des séparation dasn les dialogue.
+        Des balise personalisé peuvent être rajouté pour faire en sorte que l'outil ajoute différents effets au texte, 
+        avec dotween ou bien juste qu'il soit en gras, etc...
       </p>
     </div>
   </div>
 
   <div class="right-section">
     <div class="project-section project-tools">
-      <h2>Technologie testé</h2>
+      <h2>Technologie utilisé</h2>
       <ul>
-        <li>Sauvegarde Json</li>
-        <li>Création de tool</li>
+        <li>Regex</li>
       </ul>
     </div>
   </div>
@@ -114,11 +114,10 @@
 
 </section>
 
-<section class="project-features">
+<!--<section class="project-features">
 
   <h2>Fonctionnalités clés</h2>
 
-  <!-- Sélecteur -->
   <div class="feature-tabs">
     <button class="active" data-feature="feature1">Sauvegarde Json</button>
     <button data-feature="feature2">SaveFunction Tool</button>
@@ -126,7 +125,6 @@
     <button data-feature="feature4">IgnoreFolder Tool</button>
   </div>
 
-  <!-- Contenu -->
   <div class="feature-content">
 
     <div class="feature-panel active" id="feature1">
@@ -145,7 +143,7 @@
       <div class="feature-text">
         <p>
           Save Function est un outil pour gérer les données de sauvegarde rapidement.
-          On peut ouvrir l'emplacement de sauvegarde ou supprimer toutes les données en un seul clique.
+          On peut ouvrir l'emplacement de sauvegarde ou supprimer toutes les données en un seul clic.
         </p>
         
         <div class="feature-link">
@@ -179,7 +177,7 @@
       <div class="feature-text">
         <p>
           Ignore Folder est un outil pour naviquer plus rapidement dans les projet unity.
-          Comme le nom l'indique il permet d'ignorer les dossier, quand tu clique sur l'un deux l'inspecteur ne perdra pas la référence précédente.
+          Comme le nom l'indique il permet d'ignorer les dossier, quand tu clic sur l'un deux l'inspecteur ne perdra pas la référence précédente.
         </p>
         
         <div class="feature-link">
@@ -192,6 +190,6 @@
 
   </div>
 
-</section>
+</section>-->
 </body>
 </html>
