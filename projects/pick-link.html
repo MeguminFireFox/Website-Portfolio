@@ -10,12 +10,15 @@
   <!-- CSS page projet -->
   <link rel="stylesheet" href="../css/project.css">
   <script src="../js/project.js" defer></script>
+  <script src="../js/achievements.js" defer></script>
 </head>
 
 <body>
 
-<!-- Bouton retour -->
-<a href="../index.html" class="back-btn">← Retour</a>
+<div class="nav-buttons">
+  <button id="backBtn" class="back-btn">← Retour</button>
+  <a href="../index.html" class="home-btn">Home</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="project-hero-layout">
@@ -105,36 +108,43 @@
 
   <!-- Sélecteur -->
   <div class="feature-tabs">
-    <button class="active" data-feature="feature1">Gameplay dynamique</button>
-    <button data-feature="feature2">Multijoueur local</button>
-    <button data-feature="feature3">Lisibilité & fun</button>
+    <button class="active" data-feature="feature1">Rôles</button>
+    <button data-feature="feature2">Classes</button>
+    <button data-feature="feature2">Le lien</button>
   </div>
 
   <!-- Contenu -->
   <div class="feature-content">
 
     <div class="feature-panel active" id="feature1">
-      <img src="../img/feature-gameplay.png" alt="">
-      <p>
-        Des mécaniques simples mais nerveuses, pensées pour des parties rapides
-        et fun entre amis.
-      </p>
+      <img src="../gif/Gif0.gif" alt="">
+        <div class="feature-text">
+          <p>
+            Chaque joueur a un rôles qui lui est attribué au début de partie soit innocent soit imposteur, 
+            en fonction de ce rôle tu dosi soot terminer le niveaux ou alors faire en sorte que l'équipe n'y arrive pas.
+          </p>
+        </div>
     </div>
 
     <div class="feature-panel" id="feature2">
-      <img src="../img/feature-multi.png" alt="">
-      <p>
-        Jouable jusqu’à 4 joueurs en local, avec une gestion claire des inputs
-        et des interactions.
-      </p>
+      <img src="../gif/Gif8.gif" alt="">
+
+      <div class="feature-text">
+        <p>
+          Tout les joueur obtiennent une classe diférentes qui influe sur leur gameplay, 
+          mais aussi sur des objectifs qu'il doivent faire chacun de leur coté pour débloquer la fin de leur rôle.
+        </p>
+      </div>
     </div>
 
-    <div class="feature-panel" id="feature3">
-      <img src="../img/feature-clarity.png" alt="">
-      <p>
-        Une direction artistique lisible et colorée, facilitant la compréhension
-        immédiate de l’action.
-      </p>
+    <div class="feature-panel" id="feature2">
+      <img src="../gif/Gif8.gif" alt="">
+
+      <div class="feature-text">
+        <p>
+          Tout les joueur sont lié par une sorte de corde, ils doivent donc coopérer pour avancer et faire leurs objectifs.
+        </p>
+      </div>
     </div>
 
   </div>

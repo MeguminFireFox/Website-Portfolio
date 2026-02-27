@@ -1,31 +1,4 @@
 /* =========================
-   BOUTON RETOUR
-========================= */
-
-.back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 2000;
-
-  padding: 10px 16px;
-  border-radius: 14px;
-
-  border: 2px solid #4CAF50;
-  background: rgba(18, 18, 18, 0.85);
-  color: white;
-  text-decoration: none;
-
-  backdrop-filter: blur(8px);
-  transition: 0.3s;
-}
-
-.back-btn:hover {
-  background: #4CAF50;
-  color: #121212;
-}
-
-/* =========================
    HERO LAYOUT
 ========================= */
 
@@ -223,6 +196,10 @@
   font-size: 1.6em;
 }
 
+.project-features p {
+  text-align: justify;
+}
+
 /* Tabs */
 .feature-tabs {
   display: flex;
@@ -289,9 +266,41 @@
 
 /* Texte */
 .feature-panel p {
-  width: 55%;
   line-height: 1.6;
   font-size: 1em;
+}
+
+.feature-text {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* force l'alignement à gauche */
+}
+
+.feature-text p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.feature-link {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.feature-link span {
+  font-weight: bold;
+}
+
+.feature-link a {
+  text-decoration: none;
+  color: #4CAF50;
+  transition: 0.3s;
+}
+
+.feature-link a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive */
@@ -350,3 +359,37 @@
   }
 }
 
+/* =========================
+   NAV BUTTONS
+========================= */
+
+.nav-buttons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+  display: flex;
+  gap: 12px;
+}
+
+/* Bouton retour et home même style */
+.back-btn,
+.home-btn {
+  padding: 10px 16px;
+  border-radius: 14px;
+
+  border: 2px solid #4CAF50;
+  background: rgba(18, 18, 18, 0.85);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.back-btn:hover,
+.home-btn:hover {
+  background: #4CAF50;
+  color: #121212;
+}

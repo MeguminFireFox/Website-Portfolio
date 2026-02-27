@@ -70,4 +70,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+// =========================
+// BOUTON RETOUR HISTORIQUE
+// =========================
+const backBtn = document.getElementById("backBtn");
+
+// 🔥 Option bonus : cacher si pas d’historique
+if (window.history.length <= 1 && backBtn) {
+  backBtn.style.display = "none";
+}
+
+if (backBtn) {
+
+  backBtn.addEventListener("click", () => {
+
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = "../index.html";
+    }
+
+  });
+  
+}
+
 });

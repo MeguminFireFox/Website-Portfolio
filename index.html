@@ -48,16 +48,15 @@
         <a href="docs/Ambre Hardy CV.pdf" target="_blank" class="header-cv">
             CV
         </a>
-
-        <a href="#" id="achievementBtn" class="icon-link">
-            <img src="icons/AchievementIcon.png" alt="Achievements">
-        </a>
-
     </div>
 
 </header>
 
 <main>
+
+    <button id="achievementBtn" class="achievement-btn">
+    <img src="icons/AchievementIcon.png" alt="Achievements">
+    </button>
 
     <section id="about" class="section">
     <h2>À Propos</h2>
@@ -103,9 +102,12 @@
             <button class="filter-btn" data-filter="tool">Tool</button>
             <button class="filter-btn" data-filter="unity">Unity</button>
             <button class="filter-btn" data-filter="unreal">Unreal</button>
+            <button class="filter-btn" data-filter="c++">C++</button>
+            <button class="filter-btn" data-filter="c">C</button>
             <button class="filter-btn" data-filter="pc">PC</button>
             <button class="filter-btn" data-filter="mobile">Mobile</button>
             <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="homebrew">HomeBrew</button>
             <button class="filter-btn" data-filter="solo">Solo</button>
             <button class="filter-btn" data-filter="multiplayer">Multijoueur</button>
             <button class="filter-btn" data-filter="vr">VR</button>
@@ -156,6 +158,17 @@
                 </div>
             </div>
 
+            <!--<div class="project-card" data-tags="game c homebrew">
+                <img src="gif/Gif3.gif" alt="Pick Link GIF">
+                <h3>Demake I am an Oragn</h3>
+                <p>Shoot's em up</p>
+                <div class="tags">
+                    <span>Game</span>
+                    <span>C</span>
+                    <span>HomeBrew</span>
+                </div>
+            </div>-->
+
             <div class="project-card" data-tags="game unity pc solo jam"
                 onclick="window.location.href='projects/face-the-fear.html'">
                 <img src="gif/Gif4.gif" alt="Face The Fear GIF">
@@ -196,15 +209,27 @@
                 </div>
             </div>
 
-            <div class="project-card" data-tags="tool unity">
+            <!--<div class="project-card" data-tags="game unreal pc multiplayer">
                 <img src="gif/Gif3.gif" alt="Pick Link GIF">
                 <h3>Interférence</h3>
-                <p>Outil d'édition de code</p>
+                <p>Shooter</p>
                 <div class="tags">
-                    <span>Tool</span>
-                    <span>Unity</span>
+                    <span>Game</span>
+                    <span>Unreal</span>
+                    <span>PC</span>
+                    <span>Multijoueur</span>
                 </div>
-            </div>
+            </div>-->
+
+            <!--<div class="project-card" data-tags="game c++">
+                <img src="gif/Gif3.gif" alt="Pick Link GIF">
+                <h3>Coffee Shop</h3>
+                <p>Jeu de gestion</p>
+                <div class="tags">
+                    <span>Game</span>
+                    <span>C++</span>
+                </div>
+            </div>-->
 
             <div class="project-card" data-tags="game unreal pc solo vr"
                 onclick="window.location.href='projects/arnac-la-poste.html'">
@@ -303,6 +328,7 @@
 </main>
 
 <script src="js/app.js"></script>
+<script src="js/achievements.js"></script>
 
 </body>
 </html>

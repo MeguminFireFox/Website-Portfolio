@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
    KONAMI CODE
 ========================= */
 
-const easterEggs = [flipPage, bossMode, miniGame, matrixMode];
+const easterEggs = [flipPage, miniGame, matrixMode, unlockRetroMode];
 
 function flipPage() {
 
@@ -106,27 +106,6 @@ function flipPage() {
 
     document.body.classList.add("flip-mode");
     setTimeout(() => document.body.classList.remove("flip-mode"), 1500);
-}
-
-function bossMode() {
-
-        if (!hasLaunched("bossMode")) updateAchievement("eventHunter");
-
-    markAsLaunched("bossMode");
-
-    const msg = document.createElement("div");
-    msg.textContent = "You reached the final level!";
-    msg.style.position = "fixed";
-    msg.style.bottom = "20px";
-    msg.style.left = "50%";
-    msg.style.transform = "translateX(-50%)";
-    msg.style.background = "#4CAF50";
-    msg.style.color = "#121212";
-    msg.style.padding = "10px 20px";
-    msg.style.borderRadius = "12px";
-    msg.style.zIndex = 10000;
-    document.body.appendChild(msg);
-    setTimeout(() => document.body.removeChild(msg), 2000);
 }
 
 function miniGame() {
@@ -334,6 +313,86 @@ function matrixMode() {
     }, 3000);
 }
 
+/* =========================
+   RETRO MODE SYSTEM
+========================= */
+
+let retroUnlocked = localStorage.getItem("retroUnlocked") === "true";
+let retroEnabled = localStorage.getItem("retroEnabled") === "true";
+
+function createRetroToggle() {
+    if (document.getElementById("retroToggleContainer")) return;
+
+    const container = document.createElement("div");
+    container.id = "retroToggleContainer";
+
+    container.innerHTML = `
+        <label class="retro-switch">
+            <input type="checkbox" id="retroToggle">
+            <span class="slider"></span>
+        </label>
+        <span class="retro-label">RETRO</span>
+    `;
+
+    document.body.appendChild(container);
+
+    const toggle = document.getElementById("retroToggle");
+
+    toggle.checked = retroEnabled;
+
+    toggle.addEventListener("change", () => {
+        retroEnabled = toggle.checked;
+        localStorage.setItem("retroEnabled", retroEnabled);
+
+        document.body.classList.toggle("retro-mode", retroEnabled);
+    });
+}
+
+if (retroUnlocked) {
+    createRetroToggle();
+    document.body.classList.toggle("retro-mode", retroEnabled);
+}
+
+function unlockRetroMode() {
+
+    if (retroUnlocked) return;
+
+    updateAchievement("eventHunter");
+
+    retroUnlocked = true;
+    retroEnabled = true;
+
+    localStorage.setItem("retroUnlocked", true);
+    localStorage.setItem("retroEnabled", true);
+
+    showRetroLoading(() => {
+        createRetroToggle();
+        document.body.classList.add("retro-mode");
+    });
+}
+
+function showRetroLoading(callback) {
+
+    const loader = document.createElement("div");
+    loader.id = "retroLoader";
+
+    loader.innerHTML = `
+        <div class="retro-loader-box">
+            <p>BOOTING SYSTEM...</p>
+            <div class="retro-bar">
+                <div class="retro-bar-fill"></div>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(loader);
+
+    setTimeout(() => {
+        loader.remove();
+        callback();
+    }, 2500);
+}
+
 const konamiCode = [
     "ArrowUp",
     "ArrowUp",
@@ -374,130 +433,5 @@ function hasLaunched(eventName) {
 function markAsLaunched(eventName) {
     localStorage.setItem("event_" + eventName, "true");
 }
-
-/* =========================
-   ACHIEVEMENT SYSTEM
-========================= */
-
-/* ========= CONFIG ========= */
-
-const achievementData = {
-    konami: {
-        name: "Konami Initiate",
-        description: "Découvrir le Konami Code",
-    },
-    explorer: {
-        name: "Explorer",
-        description: "Visiter tous les projets",
-        max: 10
-    },
-    eventHunter: {
-        name: "Event Hunter",
-        description: "Avoir au moins une fois tous les évènements",
-        max: 4
-    },
-    arcadeMaster: {
-        name: "Arcade Survivor",
-        description: "Atteindre 10 points",
-    },
-    dedicated: {
-        name: "Dedicated",
-        description: "Rester 5 minutes sur le site"
-    }
-};
-
-
-   function getAchievements() { return JSON.parse(localStorage.getItem("achievements")) || {}; }
-    function saveAchievements(data) { localStorage.setItem("achievements", JSON.stringify(data)); }
-
-    // Création popup
-    const popup = document.createElement("div"); popup.id = "achievementPopup";
-    popup.innerHTML = `
-        <div class="achievement-header">
-            <h3>Achievements</h3>
-            <button id="closeAchievementPopup" class="achievement-close">✕</button>
-        </div>
-        <div id="achievementContent"></div>
-    `;
-    document.body.appendChild(popup);
-
-    const achievementContent = document.getElementById("achievementContent");
-    const closeBtn = document.getElementById("closeAchievementPopup");
-    const achievementBtn = document.getElementById("achievementBtn");
-
-    function renderAchievements() {
-        const achievements = getAchievements();
-        achievementContent.innerHTML = "";
-        let completedCount = 0;
-        const totalCount = Object.keys(achievementData).length;
-
-        Object.keys(achievementData).forEach(id => {
-            const data = achievementData[id], progress = achievements[id] || 0, isProgressive = data.max !== undefined;
-            const isCompleted = isProgressive ? progress >= data.max : progress >= 1;
-            if (isCompleted) completedCount++;
-
-            const item = document.createElement("div"); item.className = "achievement-item"; if (isCompleted) item.classList.add("completed");
-            item.innerHTML = `
-                <div class="achievement-top">
-                    <strong>${data.name}</strong> ${isCompleted ? '<span class="badge">✔</span>' : ''}
-                </div>
-                <div class="achievement-desc">${data.description}</div>
-                ${isProgressive ? `<div class="progress-bar"><div class="progress-fill" style="width:${Math.min((progress/data.max)*100,100)}%"></div></div><div class="progress-text">${progress}/${data.max}</div>` : ''}
-            `;
-            achievementContent.appendChild(item);
-        });
-
-        const global = document.createElement("div");
-        global.className = "achievement-global";
-        global.textContent = `Progression globale : ${completedCount} / ${totalCount}`;
-        achievementContent.appendChild(global);
-    }
-
-    function openPopup() { popup.classList.add("open"); renderAchievements(); }
-    function closePopup() { popup.classList.remove("open"); }
-
-    if (achievementBtn) achievementBtn.addEventListener("click", (e) => { e.stopPropagation(); popup.classList.toggle("open"); renderAchievements(); });
-    closeBtn.addEventListener("click", e => { e.stopPropagation(); closePopup(); });
-    document.addEventListener("click", e => { if (popup.classList.contains("open") && !popup.contains(e.target) && e.target !== achievementBtn) closePopup(); });
-
-    function updateAchievement(id, amount = 1, uniqueId = null) {
-        if (!achievementData[id]) return;
-        let achievements = getAchievements();
-        const data = achievementData[id];
-
-        if (uniqueId) {
-            if (!achievements.seenItems) achievements.seenItems = {};
-            if (!achievements.seenItems[id]) achievements.seenItems[id] = [];
-            if (!achievements.seenItems[id].includes(uniqueId)) {
-                achievements.seenItems[id].push(uniqueId);
-                achievements[id] = achievements.seenItems[id].length;
-                saveAchievements(achievements); renderAchievements();
-                if (data.max !== undefined && achievements[id] >= data.max) showAchievementToast(data.name);
-            }
-            return;
-        }
-
-        if (!achievements[id]) achievements[id] = 0;
-        const before = achievements[id];
-        if (data.max !== undefined) { achievements[id] += amount; if (achievements[id] > data.max) achievements[id] = data.max; }
-        else achievements[id] = 1;
-
-        saveAchievements(achievements); renderAchievements();
-
-        const isCompleted = data.max ? achievements[id] >= data.max : achievements[id] >= 1;
-        const wasCompleted = data.max ? before >= data.max : before >= 1;
-        if (!wasCompleted && isCompleted) showAchievementToast(data.name);
-    }
-
-    function showAchievementToast(name) {
-        const toast = document.createElement("div"); toast.className = "achievement-toast";
-        toast.innerHTML = `<div class="toast-icon">🏆</div><div class="toast-content"><div class="toast-title">Succès débloqué</div><div class="toast-name">${name}</div></div>`;
-        document.body.appendChild(toast);
-        setTimeout(() => toast.classList.add("show"), 50);
-        setTimeout(() => { toast.classList.remove("show"); setTimeout(() => toast.remove(), 300); }, 3000);
-    }
-
-    // Achievement auto 5 minutes
-    setTimeout(() => { updateAchievement("dedicated"); }, 300000);
 
 });

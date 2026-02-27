@@ -10,12 +10,15 @@
   <!-- CSS page projet -->
   <link rel="stylesheet" href="../css/project.css">
   <script src="../js/project.js" defer></script>
+  <script src="../js/achievements.js" defer></script>
 </head>
 
 <body>
 
-<!-- Bouton retour -->
-<a href="../index.html" class="back-btn">← Retour</a>
+<div class="nav-buttons">
+  <button id="backBtn" class="back-btn">← Retour</button>
+  <a href="../index.html" class="home-btn">Home</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="project-hero-layout">
@@ -83,17 +86,17 @@
     <div class="project-section">
       <h2>Résumé du projet</h2>
       <p>
-        Banquise Battle est un jeu de combat multijoueur local développé sous Unity.
-        L'objectif était de créer un jeu fun et de tester les fonctionalité multijoueur de Unity.
+        Tacticook est un Roguelike Tactical-RPG mobile développé sous Unity.
+        L'objectif était de créer un jeu fun et original sur mobile, dans le but de pouvoir
+         si l'on a l'envie par la suite de le présenté a un éditeur.
       </p>
     </div>
 
     <div class="project-section">
       <h2>Mon rôle</h2>
       <p>
-        J’ai travaillé principalement sur la programmation  du gameplay (mouvement, actions et animation du joueurs),
-        l’implémentation du multijoueur et integartio n des assests dans le projets.
-        J'ai aussi fait pas mal de juice et de correction de bug.
+        J’ai surtout travaillé sur les programmes secondaire (système de sauvegarde, système de dialogue et différents outils de production),
+        et sur le playtest, la recherche de bug et leur correction.
       </p>
     </div>
   </div>
@@ -118,30 +121,73 @@
   <!-- Sélecteur -->
   <div class="feature-tabs">
     <button class="active" data-feature="feature1">Sauvegarde Json</button>
-    <button data-feature="feature2">Tool</button>
+    <button data-feature="feature2">SaveFunction Tool</button>
+    <button data-feature="feature3">DialogMaker Tool</button>
+    <button data-feature="feature4">IgnoreFolder Tool</button>
   </div>
 
   <!-- Contenu -->
   <div class="feature-content">
 
     <div class="feature-panel active" id="feature1">
-      <img src="../img/feature-gameplay.png" alt="">
-      <p>
-        Un système de sauvegarde générique pour enregistré l'inventaire du joueur et la carte généré procéduralement.
-        Il y a aussi un xor pour crypter et décrypter les sauvegardes avec une clé pour empêcher un minimum la triche.
-      </p>
+      <img src="../gif/Gif0.gif" alt="">
+        <div class="feature-text">
+          <p>
+            Un système de sauvegarde générique pour enregistré l'inventaire du joueur et la carte généré procéduralement.
+            Il y a aussi un xor pour crypter et décrypter les sauvegardes avec une clé pour empêcher un minimum la triche.
+          </p>
+        </div>
     </div>
 
     <div class="feature-panel" id="feature2">
-      <img src="../img/feature-multi.png" alt="">
-        <ul>
-          <h3>Tools :</h3>
-          <li><a href="../projects/banquise-battle.html">Save Function</a></li>
-          <li><a href="../projects/banquise-battle.html">IgnoreFolder</a></li>
-          <li><a href="../projects/banquise-battle.html">Dialogue Maker</a></li>
-          <li><a href="../projects/banquise-battle.html">DebugLog Manager</a></li>
-        </ul>
-      </p>
+      <img src="../gif/Gif8.gif" alt="">
+
+      <div class="feature-text">
+        <p>
+          Save Function est un outil pour gérer les données de sauvegarde rapidement.
+          On peut ouvrir l'emplacement de sauvegarde ou supprimer toutes les données en un seul clic.
+        </p>
+        
+        <div class="feature-link">
+          <span>Lien :</span>
+          <a href="../projects/banquise-battle.html">Save Function</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="feature-panel" id="feature3">
+      <img src="../gif/Gif8.gif" alt="">
+
+      <div class="feature-text">
+        <p>
+          Dialog Maker est un outil pour convertir des fichier excel en scriptable object qu'on peut ensuite mettre dans un autre script pour les afficher.
+          On peut aussi faire en sorte qu'il y ai quelques animation comme du shake sur le text etc...
+        </p>
+        
+        <div class="feature-link">
+          <span>Lien :</span>
+          <a href="../projects/banquise-battle.html">Save Function</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="feature-panel" id="feature4">
+      <img src="../gif/Gif8.gif" alt="">
+
+      <div class="feature-text">
+        <p>
+          Ignore Folder est un outil pour naviquer plus rapidement dans les projet unity.
+          Comme le nom l'indique il permet d'ignorer les dossier, quand tu clic sur l'un deux l'inspecteur ne perdra pas la référence précédente.
+        </p>
+        
+        <div class="feature-link">
+          <span>Lien :</span>
+          <a href="../projects/banquise-battle.html">Save Function</a>
+        </div>
+
+      </div>
     </div>
 
   </div>

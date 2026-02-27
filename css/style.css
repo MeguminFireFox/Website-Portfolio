@@ -151,6 +151,49 @@ ul li {
 }
 
 /* =========================
+   ACHIEVEMENT BUTTON - STYLE AMÉLIORÉ
+========================= */
+.achievement-btn {
+  position: fixed;
+  top: 110px; /* juste sous le header */
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(145deg, #1f1f1f, #151515);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+
+  box-shadow: 
+      0 4px 15px rgba(0,0,0,0.4),
+      0 0 15px rgba(76,175,80,0.3);
+  transition: all 0.3s ease;
+  z-index: 1300; /* au-dessus de tout */
+  cursor: pointer;
+}
+
+.achievement-btn img {
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+  filter: brightness(1) invert(1);
+}
+
+.achievement-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #242424, #1a1a1a);
+}
+
+.achievement-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(63%) sepia(83%) saturate(329%) hue-rotate(85deg);
+}
+
+/* =========================
    SECTIONS
 ========================= */
 .section {
@@ -413,45 +456,121 @@ button:hover {
 }
 
 /* =========================
-   ACHIEVEMENTS
+   ACHIEVEMENTS POPUP
 ========================= */
+
 #achievementPopup {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 340px;
-  max-height: 450px;
+  position: fixed; /* ON GARDE FIXED */
+
+  top: 100px;
+  right: 30px;
+
+  width: 360px;
+  max-height: 500px;
   overflow-y: auto;
+
   background: linear-gradient(145deg, #1f1f1f, #151515);
   color: #f1f1f1;
+
   padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-  transform: translateY(-20px);
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.7),
+    0 0 20px rgba(76,175,80,0.08);
+
+  transform: translateY(-30px) scale(0.95);
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease;
+
+  transition: all 0.35s ease;
   z-index: 10000;
 }
 
+/* Animation ouverture */
 #achievementPopup.open {
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 
+/* =========================
+   HEADER
+========================= */
+
+.achievement-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.achievement-header h3 {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.achievement-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+
+  color: #aaa;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.achievement-close:hover {
+  background: var(--accent);
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(76,175,80,0.6);
+}
+
+/* =========================
+   ACHIEVEMENT ITEMS
+========================= */
+
 .achievement-item {
-  padding: 14px;
-  margin-bottom: 12px;
-  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 14px;
+
+  border-radius: 14px;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.05);
-  transition: all 0.2s ease;
+
+  transition: all 0.25s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.05);
 }
 
 .achievement-item.completed {
   border: 1px solid rgba(76,175,80,0.6);
   background: rgba(76,175,80,0.08);
+  box-shadow: 0 0 15px rgba(76,175,80,0.1);
 }
 
 .achievement-top {
@@ -463,15 +582,19 @@ button:hover {
 .achievement-desc {
   font-size: 0.85rem;
   opacity: 0.75;
-  margin-top: 4px;
+  margin-top: 6px;
 }
+
+/* =========================
+   PROGRESS BAR
+========================= */
 
 .progress-bar {
   width: 100%;
   height: 6px;
   background: #2a2a2a;
   border-radius: 6px;
-  margin-top: 8px;
+  margin-top: 10px;
   overflow: hidden;
 }
 
@@ -489,6 +612,7 @@ button:hover {
   text-align: right;
 }
 
+/* Badge ✔ */
 .badge {
   background: var(--accent);
   color: black;
@@ -498,9 +622,13 @@ button:hover {
   font-weight: bold;
 }
 
+/* =========================
+   GLOBAL PROGRESSION
+========================= */
+
 .achievement-global {
-  margin-top: 15px;
-  padding-top: 10px;
+  margin-top: 20px;
+  padding-top: 12px;
   border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 0.9rem;
   text-align: center;
@@ -508,26 +636,63 @@ button:hover {
 }
 
 /* =========================
+   SCROLLBAR DARK STYLE
+========================= */
+
+#achievementPopup::-webkit-scrollbar {
+  width: 8px;
+}
+
+#achievementPopup::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+#achievementPopup::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+#achievementPopup::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Firefox */
+#achievementPopup {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #1a1a1a;
+}
+
+/* =========================
    TOAST
 ========================= */
+
 .achievement-toast {
   position: fixed;
   bottom: 25px;
   right: 25px;
+
   display: flex;
   align-items: center;
   gap: 12px;
+
   background: rgba(25,25,25,0.95);
   backdrop-filter: blur(8px);
+
   padding: 12px 16px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.06);
+
   color: #f1f1f1;
   font-size: 0.9rem;
+
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
   opacity: 0;
   transform: translateY(15px);
   transition: all 0.3s ease;
+
   z-index: 20000;
 }
 
@@ -548,6 +713,168 @@ button:hover {
 .toast-name {
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+/* =========================
+   TOGGLE CONTAINER
+========================= */
+
+#retroToggleContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: monospace;
+  color: #33ff33;
+}
+
+/* =========================
+   SWITCH
+========================= */
+
+.retro-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.retro-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #222;
+  border: 2px solid #33ff33;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 2px;
+  background-color: #33ff33;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.retro-switch input:checked + .slider {
+  background-color: #003300;
+}
+
+.retro-switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+.retro-label {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   RETRO MODE
+========================= */
+
+body.retro-mode {
+  background-color: #001100;
+  color: #33ff33;
+  font-family: "Courier New", monospace;
+  position: relative;
+}
+
+/* Scanlines */
+
+body.retro-mode::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,0,0.12) 0px,
+    rgba(0,255,0,0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 9998;
+}
+
+/* Vignette */
+
+body.retro-mode::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    transparent 60%,
+    rgba(0,0,0,0.6) 100%
+  );
+  z-index: 9997;
+}
+
+/* =========================
+   LOADING SCREEN
+========================= */
+
+#retroLoader {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20000;
+  color: #33ff33;
+  font-family: monospace;
+}
+
+.retro-loader-box {
+  text-align: center;
+}
+
+.retro-bar {
+  width: 250px;
+  height: 20px;
+  border: 2px solid #33ff33;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.retro-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #33ff33;
+  animation: loadBar 2.3s linear forwards;
+}
+
+body.retro-mode .filter-btn {
+  font-family: "Courier New", monospace;
+  color: #33ff33;
+  border: 2px solid #33ff33;
+  background: transparent;
+}
+
+body.retro-mode .filter-btn:hover,
+body.retro-mode .filter-btn.active {
+  background: #003300;
+  color: #33ff33;
+}
+
+@keyframes loadBar {
+  to { width: 100%; }
 }
 
 /* =========================

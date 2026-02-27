@@ -10,12 +10,15 @@
   <!-- CSS page projet -->
   <link rel="stylesheet" href="../css/project.css">
   <script src="../js/project.js" defer></script>
+  <script src="../js/achievements.js" defer></script>
 </head>
 
 <body>
 
-<!-- Bouton retour -->
-<a href="../index.html" class="back-btn">← Retour</a>
+<div class="nav-buttons">
+  <button id="backBtn" class="back-btn">← Retour</button>
+  <a href="../index.html" class="home-btn">Home</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="project-hero-layout">
@@ -83,17 +86,17 @@
     <div class="project-section">
       <h2>Résumé du projet</h2>
       <p>
-        Banquise Battle est un jeu de combat multijoueur local développé sous Unity.
-        L'objectif était de créer un jeu fun et de tester les fonctionalité multijoueur de Unity.
+        Songe est un jeu de puzzle en vue isométrique sur pc développé sous Unity.
+        L'objectif était de créer un jeu en 1 semaine pour la game jam des Audacieuse, 
+        qui a pour but de faire des jeu qu'entre personne marginalisé.
       </p>
     </div>
 
     <div class="project-section">
       <h2>Mon rôle</h2>
       <p>
-        J’ai travaillé principalement sur la programmation  du gameplay (mouvement, actions et animation du joueurs),
-        l’implémentation du multijoueur et integartio n des assests dans le projets.
-        J'ai aussi fait pas mal de juice et de correction de bug.
+        J’ai fait toute la programmation du jeu étant la seule develoupeuse du groupe.
+        J'ai donc fait tout les déplacement du joueur ainsi que ces interactions, tout en rajoutant du juice.
       </p>
     </div>
   </div>
@@ -105,36 +108,22 @@
 
   <!-- Sélecteur -->
   <div class="feature-tabs">
-    <button class="active" data-feature="feature1">Gameplay dynamique</button>
-    <button data-feature="feature2">Multijoueur local</button>
-    <button data-feature="feature3">Lisibilité & fun</button>
+    <button class="active" data-feature="feature1">Player</button>
   </div>
 
   <!-- Contenu -->
   <div class="feature-content">
 
     <div class="feature-panel active" id="feature1">
-      <img src="../img/feature-gameplay.png" alt="">
-      <p>
-        Des mécaniques simples mais nerveuses, pensées pour des parties rapides
-        et fun entre amis.
-      </p>
-    </div>
-
-    <div class="feature-panel" id="feature2">
-      <img src="../img/feature-multi.png" alt="">
-      <p>
-        Jouable jusqu’à 4 joueurs en local, avec une gestion claire des inputs
-        et des interactions.
-      </p>
-    </div>
-
-    <div class="feature-panel" id="feature3">
-      <img src="../img/feature-clarity.png" alt="">
-      <p>
-        Une direction artistique lisible et colorée, facilitant la compréhension
-        immédiate de l’action.
-      </p>
+      <img src="../gif/Gif0.gif" alt="">
+        <div class="feature-text">
+          <p>
+            J'ai eu quelques défis par rapport au déplacement du personnage avec la camera, 
+            car elle est fixé au niveau et pas au joueur, il dévit donc se déplacer en fonction de la caméra.
+            Il y a eu aussi quelques soucis pour faire bien la perception du jeu, 
+            car c'était la première fois que je faisait un personnage 2D dans un monde 3D.
+          </p>
+        </div>
     </div>
 
   </div>

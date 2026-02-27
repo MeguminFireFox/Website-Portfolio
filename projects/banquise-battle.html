@@ -10,12 +10,15 @@
   <!-- CSS page projet -->
   <link rel="stylesheet" href="../css/project.css">
   <script src="../js/project.js" defer></script>
+  <script src="../js/achievements.js" defer></script>
 </head>
 
 <body>
 
-<!-- Bouton retour -->
-<a href="../index.html" class="back-btn">← Retour</a>
+<div class="nav-buttons">
+  <button id="backBtn" class="back-btn">← Retour</button>
+  <a href="../index.html" class="home-btn">Home</a>
+</div>
 
 <!-- ===== HERO ===== -->
 <section class="project-hero-layout">
@@ -108,46 +111,5 @@
   </div>
 </section>
 
-<section class="project-features">
-
-  <h2>Fonctionnalités clés</h2>
-
-  <!-- Sélecteur -->
-  <div class="feature-tabs">
-    <button class="active" data-feature="feature1">Gameplay dynamique</button>
-    <button data-feature="feature2">Multijoueur local</button>
-    <button data-feature="feature3">Lisibilité & fun</button>
-  </div>
-
-  <!-- Contenu -->
-  <div class="feature-content">
-
-    <div class="feature-panel active" id="feature1">
-      <img src="../img/feature-gameplay.png" alt="">
-      <p>
-        Des mécaniques simples mais nerveuses, pensées pour des parties rapides
-        et fun entre amis.
-      </p>
-    </div>
-
-    <div class="feature-panel" id="feature2">
-      <img src="../img/feature-multi.png" alt="">
-      <p>
-        Jouable jusqu’à 4 joueurs en local, avec une gestion claire des inputs
-        et des interactions.
-      </p>
-    </div>
-
-    <div class="feature-panel" id="feature3">
-      <img src="../img/feature-clarity.png" alt="">
-      <p>
-        Une direction artistique lisible et colorée, facilitant la compréhension
-        immédiate de l’action.
-      </p>
-    </div>
-
-  </div>
-
-</section>
 </body>
 </html>
